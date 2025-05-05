@@ -48,9 +48,89 @@ fof(distinct_locations, axiom, (
     )
 ).
 
-% test
-fof(con_check, conjecture, (
-    ! [LT1]: connected(LT1, 1) <=> connected(1, LT1)
+% test; every connection is reversible
+% fof(con_check, negated_conjecture, (
+%     ? [LT1, LT2]: (
+%         (connected(LT1, LT2) & ~connected(LT2, LT1)) |
+%         (~connected(LT1, LT2) & connected(LT1, LT1))
+%     )
+% )).
+
+
+% detectives and x
+fof(detectives, axiom, (
+    ! [D] : (
+        detective(D) <=> (
+            D = jane | D = hercule
+        )
+    )
+)).
+
+fof(players, axiom, (
+    ! [P] : (
+        player(P) <=> (detective(P) | P = x)
+    )
+)).
+
+fof(unique_players, axiom, (
+    $distinct(jane, hercule, x)
+)).
+
+% moves
+fof(detective_moves, axiom, (
+    ! [D, L, L_next] : (
+        legal_move(D, L, L_next) <=> (
+            detective(D) & location(L) & location(L_next) & connected(L, L_next)
+        )
+    )
+)).
+
+
+fof(player_location_1, axiom, (
+    ! [P, L] : (
+        is_at_1(P, L) => (? [L_previous] : (
+            legal_move(P, L_previous, L) & start(P, L_previous)
+        ))
+    )
+)).
+
+fof(player_location_1_distinct, axiom, (
+    ! [P, L1, L2] : (
+        (is_at_1(P, L1) & is_at_1(P, L2)) => (L1 = L2)
+    )
+)).
+
+fof(player_location_2, axiom, (
+    ! [P, L] : (
+        is_at_2(P, L) => (? [L_previous] : (
+            legal_move(P, L_previous, L) & is_at_1(P, L_previous)
+        ))
+    )
+)).
+
+fof(player_location_2_distinct, axiom, (
+    ! [P, L1, L2] : (
+        (is_at_2(P, L1) & is_at_2(P, L2)) => (L1 = L2)
+    )
+)).
+
+fof(player_location_3, axiom, (
+    ! [P, L] : (
+        is_at_3(P, L) => (? [L_previous] : (
+            legal_move(P, L_previous, L) & is_at_2(P, L_previous)
+        ))
+    )
+)).
+
+fof(player_location_3_distinct, axiom, (
+    ! [P, L1, L2] : (
+        (is_at_3(P, L1) & is_at_3(P, L2)) => (L1 = L2)
+    )
+)).
+
+
+fof(start_locations, axiom, (
+    start(jane, 6) & start(hercule, 8) & start(x, 1)
 )).
 
 
