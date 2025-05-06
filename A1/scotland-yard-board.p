@@ -76,7 +76,12 @@ fof(unique_players, axiom, (
     $distinct(jane, hercule, x)
 )).
 
-% moves
+% starting locations
+fof(start_locations, axiom, (
+    start(jane, 6) & start(hercule, 8) & start(x, 1)
+)).
+
+% legal moves
 fof(detective_moves, axiom, (
     ! [D, L, L_next] : (
         legal_move(D, L, L_next) <=> (
@@ -85,52 +90,82 @@ fof(detective_moves, axiom, (
     )
 )).
 
-
-fof(player_location_1, axiom, (
-    ! [P, L] : (
-        is_at_1(P, L) => (? [L_previous] : (
-            legal_move(P, L_previous, L) & start(P, L_previous)
-        ))
+% move 1
+fof(player_at_location_1, axiom, (
+    ! [D, L1]: (
+        is_at_1(D, L1) => (
+            ? [Lstart]: (
+                player(D) & location(L1) & location(Lstart) &
+                start(D, Lstart) & legal_move(D, Lstart, L1)
+            )
+        )
     )
 )).
 
-fof(player_location_1_distinct, axiom, (
-    ! [P, L1, L2] : (
-        (is_at_1(P, L1) & is_at_1(P, L2)) => (L1 = L2)
+fof(player_not_at_location_1, axiom, (
+    ! [D, L1, Lstart]: (
+        (
+            (player(D) & location(L1) & location(Lstart) & start(D, Lstart) & ~legal_move(D, Lstart, L1))
+        ) => ~is_at_1(D, L1)
     )
 )).
 
-fof(player_location_2, axiom, (
-    ! [P, L] : (
-        is_at_2(P, L) => (? [L_previous] : (
-            legal_move(P, L_previous, L) & is_at_1(P, L_previous)
-        ))
+fof(detective_has_location_1, axiom, (
+    ! [D] : (
+        detective(D) => ? [L1] : is_at_1(D, L1)
     )
 )).
 
-fof(player_location_2_distinct, axiom, (
-    ! [P, L1, L2] : (
-        (is_at_2(P, L1) & is_at_2(P, L2)) => (L1 = L2)
+% move 2
+fof(player_at_location_2, axiom, (
+    ! [D, L2]: (
+        is_at_2(D, L2) => (
+            ? [L1]: (
+                player(D) & location(L2) & location(L1) &
+                is_at_1(D, L1) & legal_move(D, L1, L2)
+            )
+        )
     )
 )).
 
-fof(player_location_3, axiom, (
-    ! [P, L] : (
-        is_at_3(P, L) => (? [L_previous] : (
-            legal_move(P, L_previous, L) & is_at_2(P, L_previous)
-        ))
+fof(player_not_at_location_2, axiom, (
+    ! [D, L1, L2]: (
+        (
+            (player(D) & location(L1) & location(L2) & is_at_1(D, L1) & ~legal_move(D, L1, L2))
+        ) => ~is_at_2(D, L2)
     )
 )).
 
-fof(player_location_3_distinct, axiom, (
-    ! [P, L1, L2] : (
-        (is_at_3(P, L1) & is_at_3(P, L2)) => (L1 = L2)
+fof(detective_has_location_2, axiom, (
+    ! [D] : (
+        detective(D) => ? [L2] : is_at_2(D, L2)
     )
 )).
 
 
-fof(start_locations, axiom, (
-    start(jane, 6) & start(hercule, 8) & start(x, 1)
+% move 3
+fof(player_at_location_3, axiom, (
+    ! [D, L3]: (
+        is_at_3(D, L3) => (
+            ? [L2]: (
+                player(D) & location(L2) & location(L3) &
+                is_at_2(D, L2) & legal_move(D, L2, L3)
+            )
+        )
+    )
 )).
 
+fof(player_not_at_location_3, axiom, (
+    ! [D, L3, L2]: (
+        (
+            (player(D) & location(L3) & location(L2) & is_at_2(D, L2) & ~legal_move(D, L2, L3))
+        ) => ~is_at_3(D, L3)
+    )
+)).
+
+fof(detective_has_location_3, axiom, (
+    ! [D] : (
+        detective(D) => ? [L3] : is_at_3(D, L3)
+    )
+)).
 
