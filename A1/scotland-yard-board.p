@@ -61,7 +61,7 @@ fof(distinct_locations, axiom, (
 fof(detectives, axiom, (
     ! [D] : (
         detective(D) <=> (
-            D = jane | D = hercule
+            (D = jane) | (D = hercule)
         )
     )
 )).
@@ -81,12 +81,31 @@ fof(start_locations, axiom, (
     start(jane, 6) & start(hercule, 8) & start(x, 1)
 )).
 
+fof(single_start_location, axiom, (
+    ! [P, L1, L2] : (
+        (player(P) & start(P, L1) & start(P, L2)) => (L1 = L2)
+    )
+)).
+
 % legal moves
 fof(detective_moves, axiom, (
     ! [D, L, L_next] : (
-        legal_move(D, L, L_next) <=> (
+        legal_move_detective(D, L, L_next) <=> (
             detective(D) & location(L) & location(L_next) & connected(L, L_next)
         )
+    )
+)).
+
+fof(x_moves, axiom, (
+    ! [L, L_next] : (
+        legal_move_x(x, L, L_next) <=> x = x
+        % TODO cont here
+    )
+)).
+
+fof(player_moves, axiom, (
+    ! [P, L, L_next] : (
+        legal_move(P, L, L_next) <=> (legal_move_detective(P, L, L_next))
     )
 )).
 
@@ -116,6 +135,12 @@ fof(detective_has_location_1, axiom, (
     )
 )).
 
+fof(single_location_1, axiom, (
+    ! [D, L1, L2] : (
+        (is_at_1(D, L1) & is_at_1(D, L2)) => (L1 = L2)
+    )
+)).
+
 % move 2
 fof(player_at_location_2, axiom, (
     ! [D, L2]: (
@@ -142,6 +167,11 @@ fof(detective_has_location_2, axiom, (
     )
 )).
 
+fof(single_location_2, axiom, (
+    ! [D, L1, L2] : (
+        (is_at_2(D, L1) & is_at_2(D, L2)) => (L1 = L2)
+    )
+)).
 
 % move 3
 fof(player_at_location_3, axiom, (
@@ -168,4 +198,36 @@ fof(detective_has_location_3, axiom, (
         detective(D) => ? [L3] : is_at_3(D, L3)
     )
 )).
+
+fof(single_location_3, axiom, (
+    ! [D, L1, L2] : (
+        (is_at_3(D, L1) & is_at_3(D, L2)) => (L1 = L2)
+    )
+)).
+
+% x safe zones
+fof(safe_locations_start, axiom, (
+    ![Lstart] : (
+        safe_start(Lstart) <=> (![D] : (~detective(D) | ~location(Lstart) | ~start(D, Lstart)))
+    )
+)).
+
+fof(safe_locations_1, axiom, (
+    ![L1] : (
+        safe_1(L1) <=> (![D] : (~detective(D) | ~location(L1) | ~is_at_1(D, L1)))
+    )
+)).
+
+fof(safe_locations_2, axiom, (
+    ![L2] : (
+        safe_2(L2) <=> (![D] : (~detective(D) | ~location(L2) | ~is_at_2(D, L2)))
+    )
+)).
+
+fof(safe_locations_3, axiom, (
+    ![L2] : (
+        safe_3(L2) <=> (![D] : (~detective(D) | ~location(L2) | ~is_at_3(D, L2)))
+    )
+)).
+
 

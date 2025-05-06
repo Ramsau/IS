@@ -12,3 +12,4 @@ fof(detectives_move, conjecture, (
        is_at_1(jane, J1) & is_at_2(jane, J2) & is_at_1(hercule, H1) & is_at_2(hercule, H2)
    )
 )).
+
