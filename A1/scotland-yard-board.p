@@ -42,9 +42,9 @@ fof(locations_connected, axiom, (
     )
 )).
 
-% distinctness of locations
+% distinctness of locations and players
 fof(distinct_locations, axiom, (
-    $distinct(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    $distinct(1, 2, 3, 4, 5, 6, 7, 8, 9, jane, hercule, x)
     )
 ).
 
@@ -87,6 +87,10 @@ fof(single_start_location, axiom, (
     )
 )).
 
+fof(start_players, axiom, (
+    ! [P, L_start] : start(P, L_start) => player(P) & location(L_start)
+)).
+
 % legal moves
 fof(detective_moves, axiom, (
     ! [D, L, L_next] : (
@@ -97,15 +101,18 @@ fof(detective_moves, axiom, (
 )).
 
 fof(x_moves, axiom, (
-    ! [L, L_next] : (
-        legal_move_x(x, L, L_next) <=> x = x
-        % TODO cont here
+    ! [P, L, L_next] : (
+        legal_move_x(P, L, L_next) <=> (
+            (P = x) & location(L) & location(L_next) & connected(L, L_next) & (
+                (start(x, L) & ~start(jane, L_next) & ~is_at_1(jane, L_next) & ~start(hercule, L_next) & ~is_at_1(hercule, L_next))
+            )
+        )
     )
 )).
 
 fof(player_moves, axiom, (
     ! [P, L, L_next] : (
-        legal_move(P, L, L_next) <=> (legal_move_detective(P, L, L_next))
+        legal_move(P, L, L_next) <=> (legal_move_detective(P, L, L_next) | legal_move_x(P, L, L_next))
     )
 )).
 
@@ -129,7 +136,7 @@ fof(player_not_at_location_1, axiom, (
     )
 )).
 
-fof(detective_has_location_1, axiom, (
+fof(player_has_location_1, axiom, (
     ! [D] : (
         detective(D) => ? [L1] : is_at_1(D, L1)
     )
@@ -206,28 +213,42 @@ fof(single_location_3, axiom, (
 )).
 
 % x safe zones
-fof(safe_locations_start, axiom, (
-    ![Lstart] : (
-        safe_start(Lstart) <=> (![D] : (~detective(D) | ~location(Lstart) | ~start(D, Lstart)))
-    )
-)).
-
-fof(safe_locations_1, axiom, (
-    ![L1] : (
-        safe_1(L1) <=> (![D] : (~detective(D) | ~location(L1) | ~is_at_1(D, L1)))
-    )
-)).
-
-fof(safe_locations_2, axiom, (
-    ![L2] : (
-        safe_2(L2) <=> (![D] : (~detective(D) | ~location(L2) | ~is_at_2(D, L2)))
-    )
-)).
-
-fof(safe_locations_3, axiom, (
-    ![L2] : (
-        safe_3(L2) <=> (![D] : (~detective(D) | ~location(L2) | ~is_at_3(D, L2)))
-    )
-)).
-
-
+%fof(safe_locations_start, axiom, (
+%    ![Lstart] : (
+%        (
+%            safe_start(Lstart) <=> (
+%                location(Lstart) & ~start(jane, Lstart) & ~start(hercule, Lstart)
+%            )
+%        )
+%    )
+%)).
+%
+%
+%fof(safe_locations_1, axiom, (
+%    ![L] : (
+%        (
+%            safe_1(L) <=> (
+%                location(L) & ~is_at_1(jane, L) & ~is_at_1(hercule, L)
+%            )
+%        )
+%    )
+%)).
+%
+%fof(safe_locations_2, axiom, (
+%    ![L] : (
+%        (
+%            safe_2(L) <=> (
+%                location(L) & ~is_at_2(jane, L) & ~is_at_2(hercule, L)
+%            )
+%        )
+%    )
+%)).
+%fof(safe_locations_3, axiom, (
+%    ![L] : (
+%        (
+%            safe_3(L) <=> (
+%                location(L) & ~is_at_3(jane, L) & ~is_at_3(hercule, L)
+%            )
+%        )
+%    )
+%)).

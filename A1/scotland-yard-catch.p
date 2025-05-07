@@ -1,7 +1,11 @@
 include('scotland-yard-board.p').
 
-fof(x_safe_test, conjecture, (
-    safe_start(6)
-    %safe_1(2) | safe_1(3)| safe_1(4)
-    %~is_at_1(jane, 2) | ~is_at_1(jane, 3)
+fof(detectives_catch, conjecture, (
+    ? [J1, J2, H1, H2]: (
+        is_at_1(jane, J1) & is_at_2(jane, J2) & is_at_1(hercule, H1) & is_at_2(hercule, H2) &
+        ~(? [X1, X2]: (
+            is_at_1(x, X1) & is_at_2(x, X2)
+        ))
+    )
 )).
+
