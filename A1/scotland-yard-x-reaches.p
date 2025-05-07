@@ -1,6 +1,6 @@
 include('scotland-yard-board.p').
 
-%locations
+% have to define the board here because i overwrite it in task 1.5
 fof(locations, axiom, (
     ! [L] :
         (
@@ -43,6 +43,10 @@ fof(distinct_objects, axiom, (
     )
 ).
 
+% starting locations
+fof(start_locations, axiom, (
+    start(jane, 6) & start(hercule, 8) & start(x, 1)
+)).
 
 fof(unconnected, negated_conjecture, (
     ! [L_target]: (
