@@ -1,39 +1,39 @@
 % locations
-fof(locations, axiom, (
-    ! [L] :
-        (
-            location(L) <=>
-            (
-                L = 1 |
-                L = 2 |
-                L = 3 |
-                L = 4 |
-                L = 5 |
-                L = 6 |
-                L = 7 |
-                L = 8 |
-                L = 9
-            )
-        )
-    )
-).
+%fof(locations, axiom, (
+%    ! [L] :
+%        (
+%            location(L) <=>
+%            (
+%                L = 1 |
+%                L = 2 |
+%                L = 3 |
+%                L = 4 |
+%                L = 5 |
+%                L = 6 |
+%                L = 7 |
+%                L = 8 |
+%                L = 9
+%            )
+%        )
+%    )
+%).
 
 % connections
-fof(connections, axiom, (
-    ! [L2] :
-        (
-            (connected(1, L2) <=> (L2 = 2 | L2 = 3 | L2 = 4)) &
-            (connected(2, L2) <=> (L2 = 1 | L2 = 6)) &
-            (connected(3, L2) <=> (L2 = 1 | L2 = 6 | L2 = 7 | L2 = 8)) &
-            (connected(4, L2) <=> (L2 = 1 | L2 = 5 | L2 = 8 | L2 = 9)) &
-            (connected(5, L2) <=> (L2 = 4)) &
-            (connected(6, L2) <=> (L2 = 2 | L2 = 3)) &
-            (connected(7, L2) <=> (L2 = 3)) &
-            (connected(8, L2) <=> (L2 = 3 | L2 = 4)) &
-            (connected(9, L2) <=> (L2 = 4))
-        )
-    )
-).
+%fof(connections, axiom, (
+%    ! [L2] :
+%        (
+%            (connected(1, L2) <=> (L2 = 2 | L2 = 3 | L2 = 4)) &
+%            (connected(2, L2) <=> (L2 = 1 | L2 = 6)) &
+%            (connected(3, L2) <=> (L2 = 1 | L2 = 6 | L2 = 7 | L2 = 8)) &
+%            (connected(4, L2) <=> (L2 = 1 | L2 = 5 | L2 = 8 | L2 = 9)) &
+%            (connected(5, L2) <=> (L2 = 4)) &
+%            (connected(6, L2) <=> (L2 = 2 | L2 = 3)) &
+%            (connected(7, L2) <=> (L2 = 3)) &
+%            (connected(8, L2) <=> (L2 = 3 | L2 = 4)) &
+%            (connected(9, L2) <=> (L2 = 4))
+%        )
+%    )
+%).
 
 % only locations are connected
 fof(locations_connected, axiom, (
@@ -43,10 +43,10 @@ fof(locations_connected, axiom, (
 )).
 
 % distinctness of locations and players
-fof(distinct_locations, axiom, (
-    $distinct(1, 2, 3, 4, 5, 6, 7, 8, 9, jane, hercule, x)
-    )
-).
+%fof(distinct_objects, axiom, (
+%    $distinct(1, 2, 3, 4, 5, 6, 7, 8, 9, jane, hercule, x)
+%    )
+%).
 
 % test; every connection is reversible
 % fof(con_check, negated_conjecture, (
@@ -102,9 +102,14 @@ fof(detective_moves, axiom, (
 
 fof(x_moves, axiom, (
     ! [P, L, L_next] : (
-        legal_move_x(P, L, L_next) <=> (
+        legal_move_x(P, L, L_next) => (
             (P = x) & location(L) & location(L_next) & connected(L, L_next) & (
-                (start(x, L) & ~start(jane, L_next) & ~is_at_1(jane, L_next) & ~start(hercule, L_next) & ~is_at_1(hercule, L_next))
+                (start(x, L) & ~start(jane, L_next) & ~is_at_1(jane, L_next) & ~start(hercule, L_next) & ~is_at_1(hercule, L_next)) %|
+                % ( ?[L_start]: (
+                %     location(L_start) & ~(L_start = L) & start(x, L_start) &
+                %     ~start(jane, L) & ~is_at_1(jane, L) & ~start(hercule, L) & ~is_at_1(hercule, L) &
+                %     connected(L_start, L) & ~is_at_1(jane, L_next) & ~is_at_2(jane, L_next) & ~is_at_1(hercule, L_next) & ~is_at_2(hercule, L_next)
+                % ))
             )
         )
     )
