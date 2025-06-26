@@ -34,9 +34,6 @@ ObjectProperty: <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali>
         owl:topObjectProperty
     
     
-ObjectProperty: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#contains>
-
-    
 ObjectProperty: owl:topObjectProperty
 
     
@@ -46,7 +43,9 @@ Class: <http://webprotege.stanford.edu/R2QDk2gUjC4IjatI52Lw2e>
         rdfs:label "Pepper"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/R5D5odqah6AFSQ3a4dTg05>
@@ -55,7 +54,10 @@ Class: <http://webprotege.stanford.edu/R5D5odqah6AFSQ3a4dTg05>
         rdfs:label "Pan"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>
+        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/R8amAys45W3ncy35ublS5fG>
@@ -67,16 +69,16 @@ Class: <http://webprotege.stanford.edu/R8amAys45W3ncy35ublS5fG>
         <http://webprotege.stanford.edu/RCCYmQIfF4eqGLiE1OXuTCR>
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>
+        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/R8mr53rs3pQIXSGqRh3mRl7>
 
     Annotations: 
         rdfs:label "Inventory"
-    
-    SubClassOf: 
-        not (<http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some owl:Thing)
     
     
 Class: <http://webprotege.stanford.edu/R8pMUH5DNBBsYuPUuO0j0JY>
@@ -86,15 +88,8 @@ Class: <http://webprotege.stanford.edu/R8pMUH5DNBBsYuPUuO0j0JY>
     
     SubClassOf: 
         <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R8amAys45W3ncy35ublS5fG>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R8uIellEJQYznfmqpgvbqvd>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RB9KA9o40NVJBZCIizH9bJB>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RD1HJ9T5jd80M3kurChblp7>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RDO7BNgMv4RgopeJnjTCjyt>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RE7TyYHXdEttcgqUatKG3P>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RqVSdTv7doJNFD1d1EcXVQ>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/Rqd3YaLWKnY52r6BaPQZWH>
+        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only 
+            (<http://webprotege.stanford.edu/R8amAys45W3ncy35ublS5fG> or <http://webprotege.stanford.edu/R8uIellEJQYznfmqpgvbqvd> or <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE> or <http://webprotege.stanford.edu/RB9KA9o40NVJBZCIizH9bJB> or <http://webprotege.stanford.edu/RD1HJ9T5jd80M3kurChblp7> or <http://webprotege.stanford.edu/RDO7BNgMv4RgopeJnjTCjyt> or <http://webprotege.stanford.edu/RE7TyYHXdEttcgqUatKG3P> or <http://webprotege.stanford.edu/RqVSdTv7doJNFD1d1EcXVQ> or <http://webprotege.stanford.edu/Rqd3YaLWKnY52r6BaPQZWH>)
     
     
 Class: <http://webprotege.stanford.edu/R8uIellEJQYznfmqpgvbqvd>
@@ -103,7 +98,10 @@ Class: <http://webprotege.stanford.edu/R8uIellEJQYznfmqpgvbqvd>
         rdfs:label "Sugar"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>
@@ -118,7 +116,11 @@ Class: <http://webprotege.stanford.edu/R9bZSbPnAUiRVtTlHo9sbBk>
         rdfs:label "Stove"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RCdDoDKvUPQQ8W0NxZvTltu>
+        <http://webprotege.stanford.edu/RCdDoDKvUPQQ8W0NxZvTltu>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE>
@@ -127,7 +129,10 @@ Class: <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE>
         rdfs:label "Eggs"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>
     
     
 Class: <http://webprotege.stanford.edu/RB9KA9o40NVJBZCIizH9bJB>
@@ -136,7 +141,9 @@ Class: <http://webprotege.stanford.edu/RB9KA9o40NVJBZCIizH9bJB>
         rdfs:label "Chocolate"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>
@@ -151,7 +158,9 @@ Class: <http://webprotege.stanford.edu/RC9DUYoIefPQ7wwTLnBElZi>
         rdfs:label "Onions"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RCC2HzPwfgFgC2aM5vCqnYn>
@@ -161,7 +170,8 @@ Class: <http://webprotege.stanford.edu/RCC2HzPwfgFgC2aM5vCqnYn>
     
     SubClassOf: 
         <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R2QDk2gUjC4IjatI52Lw2e>
+        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only 
+            (<http://webprotege.stanford.edu/R2QDk2gUjC4IjatI52Lw2e> or <http://webprotege.stanford.edu/R5D5odqah6AFSQ3a4dTg05> or <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE> or <http://webprotege.stanford.edu/RYZnLiWtsma3F9E7o3ANzi>)
     
     
 Class: <http://webprotege.stanford.edu/RCCYmQIfF4eqGLiE1OXuTCR>
@@ -173,7 +183,9 @@ Class: <http://webprotege.stanford.edu/RCCYmQIfF4eqGLiE1OXuTCR>
         <http://webprotege.stanford.edu/R8amAys45W3ncy35ublS5fG>
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>
+        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RCX2ltxUs03vFazv4ibkZBG>
@@ -182,7 +194,9 @@ Class: <http://webprotege.stanford.edu/RCX2ltxUs03vFazv4ibkZBG>
         rdfs:label "Spatula"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>
+        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RCdDoDKvUPQQ8W0NxZvTltu>
@@ -198,14 +212,8 @@ Class: <http://webprotege.stanford.edu/RCg2DzkqCsA8NGk2WsXNJ0u>
     
     SubClassOf: 
         <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R2QDk2gUjC4IjatI52Lw2e>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R5D5odqah6AFSQ3a4dTg05>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R9bZSbPnAUiRVtTlHo9sbBk>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RC9DUYoIefPQ7wwTLnBElZi>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RCX2ltxUs03vFazv4ibkZBG>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RDZaoWYS00AU7GenXKNx8G3>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RYZnLiWtsma3F9E7o3ANzi>
+        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only 
+            (<http://webprotege.stanford.edu/R2QDk2gUjC4IjatI52Lw2e> or <http://webprotege.stanford.edu/R5D5odqah6AFSQ3a4dTg05> or <http://webprotege.stanford.edu/R9bZSbPnAUiRVtTlHo9sbBk> or <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE> or <http://webprotege.stanford.edu/RC9DUYoIefPQ7wwTLnBElZi> or <http://webprotege.stanford.edu/RCX2ltxUs03vFazv4ibkZBG> or <http://webprotege.stanford.edu/RDZaoWYS00AU7GenXKNx8G3> or <http://webprotege.stanford.edu/RYZnLiWtsma3F9E7o3ANzi>)
     
     
 Class: <http://webprotege.stanford.edu/RD1HJ9T5jd80M3kurChblp7>
@@ -214,7 +222,9 @@ Class: <http://webprotege.stanford.edu/RD1HJ9T5jd80M3kurChblp7>
         rdfs:label "Frosting"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RDO7BNgMv4RgopeJnjTCjyt>
@@ -223,7 +233,9 @@ Class: <http://webprotege.stanford.edu/RDO7BNgMv4RgopeJnjTCjyt>
         rdfs:label "Oven"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RCdDoDKvUPQQ8W0NxZvTltu>
+        <http://webprotege.stanford.edu/RCdDoDKvUPQQ8W0NxZvTltu>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RDZaoWYS00AU7GenXKNx8G3>
@@ -232,7 +244,9 @@ Class: <http://webprotege.stanford.edu/RDZaoWYS00AU7GenXKNx8G3>
         rdfs:label "Knife"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>
+        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RE7TyYHXdEttcgqUatKG3P>
@@ -241,7 +255,10 @@ Class: <http://webprotege.stanford.edu/RE7TyYHXdEttcgqUatKG3P>
         rdfs:label "Milk"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RYZnLiWtsma3F9E7o3ANzi>
@@ -250,7 +267,10 @@ Class: <http://webprotege.stanford.edu/RYZnLiWtsma3F9E7o3ANzi>
         rdfs:label "Salt"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/RcdD0G7mj7LXxNpAPBOnpm>
@@ -260,14 +280,8 @@ Class: <http://webprotege.stanford.edu/RcdD0G7mj7LXxNpAPBOnpm>
     
     SubClassOf: 
         <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R5D5odqah6AFSQ3a4dTg05>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R8uIellEJQYznfmqpgvbqvd>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R9bZSbPnAUiRVtTlHo9sbBk>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RCCYmQIfF4eqGLiE1OXuTCR>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RE7TyYHXdEttcgqUatKG3P>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RYZnLiWtsma3F9E7o3ANzi>,
-        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> some <http://webprotege.stanford.edu/RqVSdTv7doJNFD1d1EcXVQ>
+        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only 
+            (<http://webprotege.stanford.edu/R5D5odqah6AFSQ3a4dTg05> or <http://webprotege.stanford.edu/R8uIellEJQYznfmqpgvbqvd> or <http://webprotege.stanford.edu/R9bZSbPnAUiRVtTlHo9sbBk> or <http://webprotege.stanford.edu/R9osz6PcyZ61eShoIWeIirE> or <http://webprotege.stanford.edu/RCCYmQIfF4eqGLiE1OXuTCR> or <http://webprotege.stanford.edu/RE7TyYHXdEttcgqUatKG3P> or <http://webprotege.stanford.edu/RYZnLiWtsma3F9E7o3ANzi> or <http://webprotege.stanford.edu/RqVSdTv7doJNFD1d1EcXVQ>)
     
     
 Class: <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
@@ -282,7 +296,10 @@ Class: <http://webprotege.stanford.edu/RqVSdTv7doJNFD1d1EcXVQ>
         rdfs:label "Flour"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>
+        <http://webprotege.stanford.edu/RqPbbAqtG5NTXS70uJQdZ5>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
 Class: <http://webprotege.stanford.edu/Rqd3YaLWKnY52r6BaPQZWH>
@@ -291,11 +308,45 @@ Class: <http://webprotege.stanford.edu/Rqd3YaLWKnY52r6BaPQZWH>
         rdfs:label "Cupcake Pan"
     
     SubClassOf: 
-        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>
+        <http://webprotege.stanford.edu/RC3RUwLfq6FumsffdzDWiLe>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>,
+        <http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
     
     
-Class: owl:Thing
+Class: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Glass_of_Milk>
 
+    SubClassOf: 
+        <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>,
+        <http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only <http://webprotege.stanford.edu/RE7TyYHXdEttcgqUatKG3P>
+    
+    
+Class: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Recipe_in_Inventory1>
+
+    EquivalentTo: 
+        <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>
+         and (<http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only (<http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>))
+    
+    
+Class: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Recipe_in_Inventory2>
+
+    EquivalentTo: 
+        <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>
+         and (<http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only (<http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory2>))
+    
+    
+Class: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Recipe_in_Inventory3>
+
+    EquivalentTo: 
+        <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>
+         and (<http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only (<http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory3>))
+    
+    
+Class: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Recipe_in_Inventory4>
+
+    EquivalentTo: 
+        <http://webprotege.stanford.edu/R91uizHgU2rdmQDk2L8PSaH>
+         and (<http://webprotege.stanford.edu/R8oQXWAMgE2tCv4mH1vMy3T> only (<http://webprotege.stanford.edu/RBVjApqMtvJON2qVLyxKali> value <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>))
+    
     
 Individual: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory1>
 
@@ -314,4 +365,7 @@ Individual: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Invent
     Types: 
         <http://webprotege.stanford.edu/R8mr53rs3pQIXSGqRh3mRl7>
     
+    
+Individual: <urn:webprotege:ontology:5afbc08d-b9a7-4d2e-809a-baf7edb345df#Inventory4>
+
     
