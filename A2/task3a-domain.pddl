@@ -10,15 +10,15 @@
         (connected ?location1 - location ?location2 - location )
         (at-package ?p - package  ?l - location)
         (at-robot ?r - robot ?l - location)
-        (carries ?r -robot ?p - package)
+        (carries ?r - robot ?p - package)
     )
-    
+
     (:functions
         (weighs ?package - package)
         (capacity ?robot - robot)
         (load ?robot - robot)
     )
-    
+
     (:action move
         :parameters(?bot - robot ?from - location ?to - location)
         :precondition (and
@@ -30,7 +30,7 @@
             (at-robot ?bot ?to)
         )
     )
-    
+
     (:action pickup
         :parameters(?bot - robot ?package - package ?loc - location)
         :precondition (and
@@ -44,14 +44,14 @@
             (increase (load ?bot) (weighs ?package))
         )
     )
-    
+
     (:action putdown
         :parameters(?bot - robot ?package - package ?loc - location)
         :precondition (and
             (at-robot ?bot ?loc)
             (carries ?bot ?package)
         )
-        :effect (and 
+        :effect (and
             (at-package ?package ?loc)
             (not (carries ?bot ?package))
             (decrease (load ?bot) (weighs ?package))

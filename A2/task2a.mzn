@@ -36,6 +36,16 @@ constraint forall(x in 1..size_x)(
     not(board[size_y, x] in {RB, BL, TB, CC})
 );
 
+% continuity
+array[1..size_y, 1..size_x] of var bool: tiles_continuous;
+constraint(tiles_continuous[1, 1] = true);
+constraint forall(x in 1..size_x, y in 1..size_y-1)(
+    (board[y, x] in {RB, BL, TB, CC} /\ board[y+1, x] in {TR, LT, TB, CC}) -> tiles_continuous[y, x] <-> tiles_continuous[y+1, x]
+);
+constraint forall(x in 1..size_x-1, y in 1..size_y)(
+    (board[y, x] in {TR, RB, LR, CC} /\ board[y, x+1] in {BL, LT, LR, CC}) -> tiles_continuous[y, x] <-> tiles_continuous[y, x+1]
+);
+
 
 
 % problem instance
@@ -56,4 +66,6 @@ constraint board[3, 2] = RB;
 constraint board[3, 5] = CC;
 constraint board[5, 3] = LT;
 constraint board[5, 5] = LR;
+constraint forall(x in 1..size_x, y in 1..size_y)(tiles_continuous[y, x]);
+
 solve satisfy;

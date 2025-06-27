@@ -47,5 +47,4 @@
             (at-robot robot A)
         )
     )
-    
 )
